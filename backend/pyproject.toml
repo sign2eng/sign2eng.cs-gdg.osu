@@ -12,6 +12,11 @@ dependencies = [
     "pydantic[email,timezone] (>=2.12.5,<3.0.0)"
 ]
 
+[dependency-groups]
+dev = [
+    "isort (>=7.0.0,<8.0.0)"
+]
+
 [tool.poetry]
 packages = [{include = "sign2eng"}]
 
