@@ -23,3 +23,17 @@ packages = [{include = "sign2eng"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+line_length = 120
+combine_as_imports = true
+skip = [
+  ".venv",
+  "build",
+  "dist",
+  "__pycache__",
+  ".mypy_cache",
+  ".pytest_cache",
+  "migrations",
+]
