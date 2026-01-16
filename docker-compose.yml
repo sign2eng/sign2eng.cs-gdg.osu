@@ -11,3 +11,19 @@ services:
     environment:
       - MODE=development
     command: fastapi dev main.py --host 0.0.0.0 --port 8000
+
+  frontend:
+    image: sing2eng.cs-gdg.osu/frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+    command: npm run dev
