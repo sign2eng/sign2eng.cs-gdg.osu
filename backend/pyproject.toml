@@ -25,6 +25,23 @@ packages = [{include = "sign2eng"}]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.black]
+line-length = 150
+target-version = ["py314"]
+skip-string-normalization = false
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+  | __pycache__
+  | \.mypy_cache
+  | \.pytest_cache
+  | .*/migrations
+)/
+'''
+
 [tool.isort]
 profile = "black"
 line_length = 120
